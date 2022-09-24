@@ -9,5 +9,7 @@ jobs:
     name: Trigger Code Checkout
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Set current date as env variable
+        run: echo "NOW::$(date +'%Y-%m-%dT%H:%M:%S')" >> $GITHUB_ENV
+      - name: Echo current date
         run: echo $NOW
