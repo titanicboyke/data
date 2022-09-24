@@ -4,9 +4,15 @@ on:
     - cron: "0 0 * * 4"
 
 jobs:
- build:
-   runs-on: ubuntu-latest
- steps:
-      - name: Get current date
-        id: date
-        run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
+
+publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
