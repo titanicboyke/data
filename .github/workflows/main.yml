@@ -11,3 +11,4 @@ jobs:
     steps:
       - name: Echo current date
         run: echo $NOW
+
