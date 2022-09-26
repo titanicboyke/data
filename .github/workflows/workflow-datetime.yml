@@ -19,7 +19,7 @@ jobs:
           # date_format: '%a  %d %b %Y  %H:%M:%S%Z'
           # timezone: 'UTC'
           # tag: 'DEFAULT-TAG'
-          # markdown_path: './migration'
+          # markdown_path: './data/migration'
           # commit_branch: 'main'
           # commit_username: 'github-actions[bot]'
           # commit_email: 'github-actions[bot]@users.noreply.github.com'
