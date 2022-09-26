@@ -10,10 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout Default: ${{ github.repository }}
+        uses: actions/checkout@v3 
 
       - name: Update with Datetime of Workflow
-        uses: titanicboyke/data@main
+        uses: titanicboyke/workflow-date@main
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           # date_format: '%a  %d %b %Y  %H:%M:%S%Z'
