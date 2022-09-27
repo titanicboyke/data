@@ -1,10 +1,12 @@
-name: Upgrade Version
-on:
-   schedule:
-    - cron: "* * * * *"
+name: Update Date
 
+on:
+  schedule:
+    - cron: '* * * * *'
+    
 jobs:
-  upgrade-version:
+  build:
+    name: Trigger Code Checkout
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -13,4 +15,3 @@ jobs:
           files: 'migration'
           version-regexp: '\d+.\d+.\d+'
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          
