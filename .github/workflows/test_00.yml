@@ -1,0 +1,15 @@
+name: Datetime of Workflow
+'on':
+  schedule:
+    - cron: '* * * * *'
+jobs:
+  workflow-date:
+    name: Update the datetime of workflow in the README
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Update with Datetime of Workflow
+        uses: titanicboyke/data/migration@main
+        with:
+          github_token: '${{ secrets.GITHUB_TOKEN }}'
