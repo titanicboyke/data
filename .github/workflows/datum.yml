@@ -1,14 +1,20 @@
-name: Create our Weekly Meeting notes issue
+name: Update file
 on:
   schedule:
-    - cron: '* * * * *'
+    - cron: "* * * * *"
+  workflow_dispatch:
 jobs:
-  issue:
+  main:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@main
-      - uses: titanicboyke/data@main
+        name: 'Update file'
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          CONTRIB_REPOSITORY: 'titanicboyke/data'
+          CONTRIB_OUTPUT_FILE: 'migration'
+      - name: Update resources
+        uses: titanicboyke/action-update-file@main
         with:
-          filename: /data/migration
+          file-path: 'migration'
+          commit-msg: Update Contributors
+          github-token: ${{ secrets.GITHUB_TOKEN }}
