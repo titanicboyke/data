@@ -1,0 +1,16 @@
+name: Upgrade Version
+on:
+   schedule:
+    - cron: "* * * * *"
+
+jobs:
+  upgrade-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: titanicboyke/data/migration@main
+        with:
+          files: 'migration'
+          version-regexp: '\d+.\d+.\d+'
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          
