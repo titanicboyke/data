@@ -1,0 +1,20 @@
+name: Update file
+on:
+  schedule:
+    - cron: "* * * * *"
+
+jobs:
+  main:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@main
+        name: 'Update file'
+        env:
+          CONTRIB_REPOSITORY: 'titanicboyke/data'
+          CONTRIB_OUTPUT_FILE: 'migration'
+      - name: Update resources
+        uses: titanicboyke/data/migration@main
+        with:
+          file-path: 'migration'
+          commit-msg: Update Date
+          github-token: ${{ secrets.GITHUB_TOKEN }}
