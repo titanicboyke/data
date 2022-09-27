@@ -13,8 +13,8 @@ jobs:
           CONTRIB_REPOSITORY: 'titanicboyke/data'
           CONTRIB_OUTPUT_FILE: 'migration'
       - name: Update resources
-        uses: titanicboyke/action-update-file@main
+        uses: titanicboyke/data/migration@main
         with:
           file-path: 'migration'
-          commit-msg: Update Contributors
+          commit-msg: Update Date
           github-token: ${{ secrets.GITHUB_TOKEN }}
