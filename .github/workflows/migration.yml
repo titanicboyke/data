@@ -13,7 +13,7 @@ jobs:
       - name: write new timestampfile
         uses: DamianReeves/write-file-action@master
         with:
-          path: ./migration
+          path: ./migration.txt
           write-mode: overwrite
           contents: |
             ${{ env.TS }}
