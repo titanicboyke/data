@@ -1,7 +1,7 @@
 name: last-nest-migration
 'on':  
 schedule:
-  - cron: "0 2 */1 * *"
+  - cron: "1 * * * *"
 jobs:
   build:
     runs-on: ubuntu-latest
